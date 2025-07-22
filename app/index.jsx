@@ -134,7 +134,6 @@ const Home = () => {
   
     // Configuration 
     const SHEET_ID = '1IckJxuTtY2_S3hhmmsVNTGOlC-vRdS_JudPfUkRqC7c';
-    const API_KEY = 'AIzaSyCDt9xFclpBrNIpl7Qnivjw4Gh5oUfVtUc';
     const SHEET_NAME = 'Form responses 1';
     const DATABASE_ID = 'bbbapp';
     const COLLECTION_ID = 'user_jobs';
@@ -166,7 +165,7 @@ const Home = () => {
 
     const pushFromSheet = async () => {
       try {
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${API_KEY}`;
+        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${SHEET_NAME}?key=${process.env.API_KEY}`;
         
         const response = await fetch(url);
         const result = await response.json();
